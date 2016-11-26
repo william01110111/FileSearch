@@ -1,0 +1,32 @@
+# depslib dependency file v1.0
+1480130966 source:/home/william/c++/FileSearch/Index.cpp
+	"Index.h"
+	"TrieNode.h"
+	"fileIO.h"
+
+1480129711 source:/home/william/c++/FileSearch/main.cpp
+	<iostream>
+	"Index.h"
+
+1480130508 /home/william/c++/FileSearch/Index.h
+	<vector>
+	<string>
+	<memory>
+	"TrieNode.h"
+	"PositionInFile.h"
+
+1480129702 source:/home/william/c++/FileSearch/fileIO.cpp
+	"fileIO.h"
+	<fstream>
+	<sstream>
+	<iostream>
+
+1480129614 /home/william/c++/FileSearch/fileIO.h
+	<string>
+
+1480130017 /home/william/c++/FileSearch/PositionInFile.h
+
+1480130958 /home/william/c++/FileSearch/TrieNode.h
+	"PositionInFile.h"
+	<string>
+

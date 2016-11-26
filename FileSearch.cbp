@@ -31,6 +31,13 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="Index.cpp" />
+		<Unit filename="Index.h" />
+		<Unit filename="PositionInFile.h" />
+		<Unit filename="TrieNode.h" />
+		<Unit filename="TrieNodeHashmap.cpp" />
+		<Unit filename="fileIO.cpp" />
+		<Unit filename="fileIO.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />
