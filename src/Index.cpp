@@ -25,7 +25,7 @@ void Index::addFile(string filePath)
 		if (file->get(i)=='\n')
 			lineNumber++;
 		
-		RangeInFile range{file, i, i+1, lineNumber};
+		RangeInFile range{file, i, i, lineNumber};
 		
 		unique_ptr<TrieNode> newRoot=root->add(range);
 		
