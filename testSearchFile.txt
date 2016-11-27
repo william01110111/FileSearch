@@ -1,5 +1,1 @@
-line 1
-
-include this
-
-sagldgmsdklf
+this is a test file with some sample text in it

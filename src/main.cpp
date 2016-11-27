@@ -9,6 +9,7 @@ int main(int argc, char** argv)
 {
 	//index.addTextFilesInDirectory("/home/william/mscl/linux-4.8.10/");
 	index.addTextFilesInDirectory(".");
+	//index.addTextFilesInDirectory("testSearchFile.txt");
 	
 	cout << "index: " << endl << index.getString() << endl;
 	

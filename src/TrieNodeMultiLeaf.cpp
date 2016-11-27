@@ -13,7 +13,7 @@ public:
 	
 	virtual string getString()
 	{
-		return "";
+		return std::to_string(myRanges.size())+" leaves";
 	}
 	
 	void get(string query, vector<RangeInFile>& out)

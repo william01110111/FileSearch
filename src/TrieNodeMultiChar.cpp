@@ -66,7 +66,14 @@ public:
 	
 	virtual string getString()
 	{
-		return "";
+		string out="multi-char\n   ";
+		
+		for (auto i: chars)
+		{
+			out+=i;
+		}
+		
+		return out;
 	}
 	
 	virtual void get(string query, vector<RangeInFile>& out)

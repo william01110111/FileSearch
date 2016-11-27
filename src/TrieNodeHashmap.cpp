@@ -42,14 +42,18 @@ public:
 	
 	virtual string getString()
 	{
-		string out="hashmap {";
+		string out="hashmap";
 		
 		for (auto i=nodes.begin(); i!=nodes.end(); i++)
 		{
-			out+=string()+"'"+i->first+"': "+indentString(i->second->getString(), false);
+			//if (i!=nodes.begin())
+				//out+="\n";
+			out+="\n";
+			
+			out+=string()+"   "+"["+i->first+"] "+indentString(i->second->getString(), false, "   ");
 		}
 		
-		out+="}\n";
+		//out+="\n";
 		
 		return out;
 	}

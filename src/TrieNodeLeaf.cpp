@@ -29,7 +29,7 @@ public:
 	
 	virtual string getString()
 	{
-		return "";
+		return "leaf";
 	}
 	
 	void get(string query, vector<RangeInFile>& out)
