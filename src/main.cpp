@@ -10,12 +10,12 @@ int main(int argc, char** argv)
 	//index.addTextFilesInDirectory("/home/william/mscl/linux-4.8.10/");
 	index.addTextFilesInDirectory(".");
 	
-	
+	cout << "index: " << endl << index.getString() << endl;
 	
 	//index.addFile("src/main.cpp");
 	//index.addFile("testSearchFile.txt");
 	
-	cout << "searching.." << endl;
+	/*cout << "searching.." << endl;
 	
 	vector<RangeInFile> results;
 	
@@ -34,4 +34,5 @@ int main(int argc, char** argv)
 		
 		cout << putStringInBox(i.getLineString(), false, labelString) << endl;
 	}
+	*/
 }

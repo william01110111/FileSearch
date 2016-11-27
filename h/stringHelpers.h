@@ -74,3 +74,10 @@ string putStringInBox(const string& in, bool showLineNums=false, string boxName=
 //		tableName: the name that will apear at the top of the table
 //		returns: a string that looks like a table
 string putStringInTable(const string& in, string tableName);
+
+//	indents a string with the given string
+//		in: the string to indent
+//		indentFirst: if to indent the first line
+//		indent: the string to use as a single indentation
+//		returns: the indented string
+string indentString(const string& in, bool indentFirst=true, string indent="    ");

@@ -11,6 +11,11 @@ public:
 		return nullptr;
 	}
 	
+	virtual string getString()
+	{
+		return "";
+	}
+	
 	void get(string query, vector<RangeInFile>& out)
 	{
 		for (auto i: myRanges)

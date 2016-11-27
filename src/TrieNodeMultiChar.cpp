@@ -64,6 +64,11 @@ public:
 		return nullptr;
 	}
 	
+	virtual string getString()
+	{
+		return "";
+	}
+	
 	virtual void get(string query, vector<RangeInFile>& out)
 	{
 		if (chars.size()>query.size())

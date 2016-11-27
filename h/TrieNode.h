@@ -23,5 +23,7 @@ public:
 	
 	virtual unique_ptr<TrieNode> add(RangeInFile& range)=0;
 	
+	virtual string getString()=0;
+	
 	virtual void get(string query, vector<RangeInFile>& out)=0;
 };

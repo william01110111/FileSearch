@@ -316,3 +316,21 @@ string putStringInTable(const string& in, string tableName)
 	
 	return out;
 }
+
+string indentString(const string& in, bool indentFirst, string indent)
+{
+	string out;
+	
+	if (indentFirst)
+		out+=indent;
+	
+	for (int i=0; i<int(in.size()); i++)
+	{
+		out+=in[i];
+		if (in[i]=='\n')
+			out+=indent;
+	}
+	
+	return out;
+}
+

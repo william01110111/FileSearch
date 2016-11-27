@@ -22,6 +22,8 @@ public:
 	void addFile(string filePath);
 	void addTextFilesInDirectory(string directory);
 	
+	string getString() {return root->getString();}
+	
 	void searchFor(string query, vector<RangeInFile>& out);
 	
 private:

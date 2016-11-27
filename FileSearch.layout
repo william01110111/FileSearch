@@ -35,7 +35,7 @@
 			<Collapse line="46" />
 		</Folding>
 	</File>
-	<File name="src/Index.cpp" open="1" top="1" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src/Index.cpp" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="2013" topLine="18" />
 		</Cursor>
@@ -44,7 +44,7 @@
 			<Collapse line="62" />
 		</Folding>
 	</File>
-	<File name="h/stringHelpers.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="h/stringHelpers.h" open="1" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="3655" topLine="0" />
 		</Cursor>
@@ -81,7 +81,7 @@
 			<Collapse line="8" />
 		</Folding>
 	</File>
-	<File name="src/stringHelpers.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src/stringHelpers.cpp" open="1" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="227" topLine="0" />
 		</Cursor>
@@ -108,7 +108,7 @@
 			<Cursor1 position="429" topLine="6" />
 		</Cursor>
 	</File>
-	<File name="src/TrieNodeHashmap.cpp" open="1" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src/TrieNodeHashmap.cpp" open="1" top="1" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="981" topLine="0" />
 		</Cursor>

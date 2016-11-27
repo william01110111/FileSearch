@@ -1,6 +1,8 @@
 
 #include "../h/TrieNode.h"
 
+#include "../h/stringHelpers.h"
+
 #include <unordered_map>
 using std::unordered_map;
 
@@ -36,6 +38,20 @@ public:
 		}
 		
 		return nullptr;
+	}
+	
+	virtual string getString()
+	{
+		string out="hashmap {";
+		
+		for (auto i=nodes.begin(); i!=nodes.end(); i++)
+		{
+			out+=string()+"'"+i->first+"': "+indentString(i->second->getString(), false);
+		}
+		
+		out+="}\n";
+		
+		return out;
 	}
 	
 	virtual void get(string query, vector<RangeInFile>& out)

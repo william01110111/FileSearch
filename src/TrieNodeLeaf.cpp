@@ -27,6 +27,11 @@ public:
 		return newNode;
 	}
 	
+	virtual string getString()
+	{
+		return "";
+	}
+	
 	void get(string query, vector<RangeInFile>& out)
 	{
 		out.push_back(myRange);
