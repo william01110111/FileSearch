@@ -24,21 +24,23 @@ public:
 		}
 		else
 		{
-			newNode=makeHashmap();
+			newNode=makeDefaultBranch();
 		}
 		
 		//	do not increment ranges as the new node will replace this one, not go below it
 		
+		RangeInFile rangeCopy=myRange;
+		
 		newNode->add(myRange);
 		newNode->add(range);
 		
-		if (start==myRange.end)
+		if (start==rangeCopy.end)
 		{
 			return newNode;
 		}
 		else
 		{
-			return makeMultiChar(RangeInFile(myRange.file, start, myRange.end-1, myRange.lineNumber), move(newNode));
+			return makeMultiChar(RangeInFile(rangeCopy.file, start, rangeCopy.end, rangeCopy.lineNumber), move(newNode));
 		}
 	}
 	

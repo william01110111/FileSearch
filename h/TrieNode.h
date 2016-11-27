@@ -15,6 +15,9 @@ class TrieNode
 {
 public:
 	
+	//#define makeDefaultBranch makeHashmap
+	#define makeDefaultBranch makeSortedVector
+	
 	static unique_ptr<TrieNode> makeHashmap();
 	static unique_ptr<TrieNode> makeHashmap(char c, unique_ptr<TrieNode> node);
 	static unique_ptr<TrieNode> makeSortedVector();

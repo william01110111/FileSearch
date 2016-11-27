@@ -36,7 +36,7 @@ public:
 					lastNode=makeMultiChar(RangeInFile(myRange.file, i+1, myRange.end, myRange.lineNumber), move(node));
 				}
 				
-				auto hashMapNode=makeHashmap(myRange.file->get(i), move(lastNode));
+				auto hashMapNode=makeDefaultBranch(myRange.file->get(i), move(lastNode));
 				hashMapNode->add(range);
 				
 				unique_ptr<TrieNode> nextNode;
@@ -68,14 +68,14 @@ public:
 	
 	string getString()
 	{
-		string out="multi-char\n   ";
+		string out="multi-char [";
 		
 		for (int i=myRange.start; i<myRange.end; i++)
 		{
 			out+=myRange.file->get(i);
 		}
 		
-		out+=" "+indentString(node->getString(), false, "   ");
+		out+="]\n   "+indentString(node->getString(), false, "   ");
 		
 		return out;
 	}

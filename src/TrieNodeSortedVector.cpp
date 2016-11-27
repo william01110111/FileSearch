@@ -29,6 +29,9 @@ public:
 		int low=0;
 		int hgh=nodes.size();
 		
+		if (hgh==0)
+			return -1;
+		
 		while(hgh-low>1)
 		{
 			int mid=(hgh+low)/2;
@@ -43,7 +46,10 @@ public:
 			}
 		}
 		
-		return low;
+		if (nodes[low].key==target)
+			return low;
+		else
+			return -1;
 	}
 	
 	inline void place(char key, unique_ptr<TrieNode> val)
@@ -74,7 +80,9 @@ public:
 		}
 		else
 		{
-			if (auto newNode=nodes[i].val->add(range))
+			auto newNode=nodes[i].val->add(range);
+			
+			if (newNode)
 			{
 				nodes[i].val=move(newNode);
 			}
