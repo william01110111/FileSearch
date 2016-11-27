@@ -10,23 +10,26 @@ Index::Index()
 
 void Index::addFile(string filePath)
 {
-	string fileContents;
+	FileData* file=new FileData(filePath);
 	
-	loadEntireFile(filePath, true, fileContents);
+	files.push_back(unique_ptr<FileData>(file));
 	
-	if (!fileContents.empty())
+	string str=file->str();
+	
+	for (int i=0; i<int(str.size()); i++)
 	{
-		int filenameIndex=filenames.size();
-		filenames.push_back(filePath);
+		RangeInFile range{file, i, i+1};
 		
-		for (int i=0; i<int(fileContents.size()); i++)
+		unique_ptr<TrieNode> newRoot=root->add(range);
+		
+		if (newRoot)
 		{
-			root->add(fileContents, PositionInFile{filenameIndex, i});
+			root.swap(newRoot);
 		}
 	}
 }
 
-void Index::searchFor(string query, vector<PositionInFile>& out)
+void Index::searchFor(string query, vector<RangeInFile>& out)
 {
 	root->get(query, out);
 }

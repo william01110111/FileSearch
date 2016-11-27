@@ -8,7 +8,7 @@
 using std::cout;
 using std::endl;
 
-void loadEntireFile(string inName, bool printOutput, string& out)
+bool loadEntireFile(string inName, bool printOutput, string& out)
 {
 	std::fstream inFile;
 	
@@ -22,6 +22,7 @@ void loadEntireFile(string inName, bool printOutput, string& out)
 		if (printOutput)
 			cout << "'" << inName << "' failed to open :(" << endl;
 		out="";
+		return false;
 	}
 	else
 	{
@@ -35,6 +36,7 @@ void loadEntireFile(string inName, bool printOutput, string& out)
 		
 		if (printOutput)
 			cout << "file reading done, '" << inName << "' closed" << endl;
+		return true;
 	}
 }
 

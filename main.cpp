@@ -6,8 +6,6 @@ using std::endl;
 
 int main(int argc, char** argv)
 {
-	Index index;
-	
 	cout << "adding file to index..." << endl;
 	
 	index.addFile("main.cpp");

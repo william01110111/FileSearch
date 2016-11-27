@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1480130966 source:/home/william/c++/FileSearch/Index.cpp
+1480206089 source:/home/william/c++/FileSearch/Index.cpp
 	"Index.h"
 	"TrieNode.h"
 	"fileIO.h"
@@ -8,25 +8,39 @@
 	<iostream>
 	"Index.h"
 
-1480130508 /home/william/c++/FileSearch/Index.h
+1480206089 /home/william/c++/FileSearch/Index.h
 	<vector>
 	<string>
 	<memory>
 	"TrieNode.h"
 	"PositionInFile.h"
+	"FileData.h"
 
-1480129702 source:/home/william/c++/FileSearch/fileIO.cpp
+1480202999 source:/home/william/c++/FileSearch/fileIO.cpp
 	"fileIO.h"
 	<fstream>
 	<sstream>
 	<iostream>
 
-1480129614 /home/william/c++/FileSearch/fileIO.h
+1480202980 /home/william/c++/FileSearch/fileIO.h
 	<string>
 
-1480130017 /home/william/c++/FileSearch/PositionInFile.h
+1480203923 /home/william/c++/FileSearch/PositionInFile.h
+	"FileData.h"
 
-1480130958 /home/william/c++/FileSearch/TrieNode.h
+1480206089 /home/william/c++/FileSearch/TrieNode.h
 	"PositionInFile.h"
 	<string>
+	<vector>
+	<memory>
+
+1480203705 source:/home/william/c++/FileSearch/FileData.cpp
+
+1480204928 /home/william/c++/FileSearch/FileData.h
+	<string>
+	<memory>
+	"fileIO.h"
+
+1480206180 source:/home/william/c++/FileSearch/TrieNodeLeaf.cpp
+	"TrieNode.h"
 

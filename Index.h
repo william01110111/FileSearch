@@ -11,6 +11,7 @@ using std::unique_ptr;
 
 #include "TrieNode.h"
 #include "PositionInFile.h"
+#include "FileData.h"
 
 class Index
 {
@@ -20,11 +21,12 @@ public:
 	
 	void addFile(string filePath);
 	
-	void searchFor(string query, vector<PositionInFile>& out);
+	void searchFor(string query, vector<RangeInFile>& out);
 	
 private:
 	
 	unique_ptr<TrieNode> root;
 	
-	vector<string> filenames;
-};
+	vector<unique_ptr<FileData>> files;
+	
+} index;

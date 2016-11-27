@@ -1,7 +1,10 @@
 #pragma once
 
-struct PositionInFile
+#include "FileData.h"
+
+struct RangeInFile
 {
-	int filename; // the index of the filename in the filenames vector in the Index class
-	int charPos; // the position of this character in the file
+	FileData* file; // the file
+	int startIndex; // the position of the first character in the range (inclusive)
+	int endIndex; // the position of the last character in the range (exclusive)
 };

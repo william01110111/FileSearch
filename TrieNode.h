@@ -5,13 +5,20 @@
 #include <string>
 using std::string;
 
+#include <vector>
+using std::vector;
+
+#include <memory>
+using std::unique_ptr;
+
 class TrieNode
 {
 public:
 	
-	static TrieNode* makeHashmap();
+	static unique_ptr<TrieNode> makeHashmap();
+	static unique_ptr<TrieNode> makeLeaf(RangeInFile& range);
 	
-	virtual void add(string& entireFile, PositionInFile pos)=0; // this uses the pos to know where in the entireFile to start
+	virtual unique_ptr<TrieNode> add(RangeInFile& range)=0;
 	
-	virtual void get(string query, vector<PositionInFile>& out)=0; // recursivly searches and adds any matches to the vector
+	virtual void get(string query, vector<RangeInFile>& out)=0;
 };

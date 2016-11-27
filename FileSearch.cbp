@@ -31,11 +31,14 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="FileData.cpp" />
+		<Unit filename="FileData.h" />
 		<Unit filename="Index.cpp" />
 		<Unit filename="Index.h" />
 		<Unit filename="PositionInFile.h" />
 		<Unit filename="TrieNode.h" />
 		<Unit filename="TrieNodeHashmap.cpp" />
+		<Unit filename="TrieNodeLeaf.cpp" />
 		<Unit filename="fileIO.cpp" />
 		<Unit filename="fileIO.h" />
 		<Unit filename="main.cpp" />
