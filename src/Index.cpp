@@ -14,7 +14,7 @@ Index index;
 
 Index::Index()
 {
-	root=unique_ptr<TrieNode>(TrieNode::makeHashmap());
+	root=TrieNode::makeDefaultBranch();
 }
 
 void Index::addFile(string filePath)

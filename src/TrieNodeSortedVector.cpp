@@ -52,16 +52,28 @@ public:
 			return -1;
 	}
 	
+	/*inline int searchFor(char target)
+	{
+		for (int i=0; i<int(nodes.size()); i++)
+		{
+			if (nodes[i].key==target)
+			{
+				return i;
+			}
+		}
+		
+		return -1;
+	}*/
+	
 	inline void place(char key, unique_ptr<TrieNode> val)
 	{
 		nodes.push_back(KeyVal{key, move(val)});
 		
-		auto i=nodes.end();
-		i--;
+		int i=nodes.size()-1;
 		
-		while (i!=nodes.begin() && i->key>key)
+		while (i>0 && nodes[i-1].key>key)
 		{
-			std::iter_swap(i, i-1);
+			std::swap(nodes[i], nodes[i-1]);
 			i--;
 		}
 	}
@@ -111,20 +123,20 @@ public:
 	
 	void get(string query, vector<RangeInFile>& out)
 	{
-		if (!query.empty())
-		{
-			auto i=searchFor(query[0]);
-			
-			if (!(i<0))
-			{
-				nodes[i].val->get(query.substr(1, string::npos), out);
-			}
-		}
-		else
+		if (query.empty())
 		{
 			for (auto i=nodes.begin(); i!=nodes.end(); i++)
 			{
 				(*i).val->get("", out);
+			}
+		}
+		else
+		{
+			auto i=searchFor(query[0]);
+			
+			if (i>=0)
+			{
+				nodes[i].val->get(query.substr(1, string::npos), out);
 			}
 		}
 	}

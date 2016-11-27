@@ -8,10 +8,10 @@ using std::endl;
 int main(int argc, char** argv)
 {
 	//index.addTextFilesInDirectory("/home/william/mscl/linux-4.8.10/");
-	//index.addTextFilesInDirectory(".");
-	index.addTextFilesInDirectory("testSearchFile.txt");
+	index.addTextFilesInDirectory(".");
+	//index.addTextFilesInDirectory("testSearchFile.txt");
 	
-	cout << "index: " << endl << index.getString() << endl;
+	//cout << "index: " << endl << index.getString() << endl;
 	
 	//index.addFile("src/main.cpp");
 	//index.addFile("testSearchFile.txt");
@@ -20,8 +20,8 @@ int main(int argc, char** argv)
 	
 	vector<RangeInFile> results;
 	
-	//index.searchFor("part->elements[i] != FLEX_ARRAY_FREE", results);
-	index.searchFor("makeHashmap(", results);
+	index.searchFor("part->elements[i] != FLEX_ARRAY_FREE", results);
+	//index.searchFor("iam", results);
 	
 	cout << "results:" << endl;
 	
