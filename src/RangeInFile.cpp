@@ -2,19 +2,19 @@
 
 string RangeInFile::getString()
 {
-	return file->str().substr(startIndex, endIndex-startIndex);
+	return file->str().substr(start, end-start);
 }
 
 string RangeInFile::getLineString()
 {
-	int s=startIndex;
+	int s=start;
 	
 	while (s>=0 && file->get(s)!='\n')
 		s--;
 	
 	s++;
 	
-	int e=endIndex;
+	int e=end;
 	
 	while (e<int(file->str().size()) && file->get(e)!='\n' && file->get(e)!=10)
 		e++;
@@ -24,5 +24,5 @@ string RangeInFile::getLineString()
 
 RangeInFile RangeInFile::copyWithSize(int newSize)
 {
-	return RangeInFile(file, startIndex, startIndex+newSize, lineNumber);
+	return RangeInFile(file, start, start+newSize, lineNumber);
 }

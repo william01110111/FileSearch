@@ -10,45 +10,45 @@ class TrieNodeMultiChar: public TrieNode
 {
 public:
 	
-	TrieNodeMultiChar(vector<char> charsIn, unique_ptr<TrieNode> nodeIn)
+	TrieNodeMultiChar(RangeInFile rangeIn, unique_ptr<TrieNode> nodeIn): myRange(rangeIn)
 	{
-		chars=charsIn;
+		//chars=charsIn;
 		node=move(nodeIn);
 	}
 	
 	virtual unique_ptr<TrieNode> add(RangeInFile& range)
 	{
-		for (int i=0; i<int(chars.size());)
+		for (int i=myRange.start; i<myRange.end;)
 		{
 			char c=range.getCharAfterEnd();
 			
-			if (c!=chars[i])
+			if (c!=myRange.file->get(i))
 			{
 				unique_ptr<TrieNode> lastNode;
 				
-				if (i>=int(chars.size())-1)
+				if (i==myRange.end-1)
 				{
 					lastNode=move(node);
 				}
 				else
 				{
-					vector<char> lastNodeChars(chars.begin()+i+1, chars.end());
-					lastNode=makeMultiChar(lastNodeChars, move(node));
+					//vector<char> lastNodeChars(chars.begin()+i+1, chars.end());
+					lastNode=makeMultiChar(RangeInFile(myRange.file, i+1, myRange.end, myRange.lineNumber), move(node));
 				}
 				
-				auto hashMapNode=makeHashmap(chars[i], move(lastNode));
+				auto hashMapNode=makeHashmap(myRange.file->get(i), move(lastNode));
 				hashMapNode->add(range);
 				
 				unique_ptr<TrieNode> nextNode;
 				
-				if (i==0)
+				if (i==myRange.start)
 				{
 					nextNode=move(hashMapNode);
 				}
 				else
 				{
-					vector<char> nextNodeChars(chars.begin(), chars.begin()+i);
-					nextNode=makeMultiChar(nextNodeChars, move(hashMapNode));
+					//vector<char> nextNodeChars(chars.begin(), chars.begin()+i);
+					nextNode=makeMultiChar(RangeInFile(myRange.file, myRange.start, i, myRange.lineNumber), move(hashMapNode));
 				}
 				
 				return nextNode;
@@ -70,9 +70,9 @@ public:
 	{
 		string out="multi-char\n   ";
 		
-		for (auto i: chars)
+		for (int i=myRange.start; i<myRange.end; i++)
 		{
-			out+=i;
+			out+=myRange.file->get(i);
 		}
 		
 		out+=" "+indentString(node->getString(), false, "   ");
@@ -82,33 +82,34 @@ public:
 	
 	virtual void get(string query, vector<RangeInFile>& out)
 	{
-		if (chars.size()>query.size())
+		if (myRange.getLength()>query.size())
 		{
 			node->get("", out);
 		}
 		else
 		{
-			for (int i=0; i<int(chars.size()); i++)
+			for (int i=myRange.start; i<myRange.end; i++)
 			{
-				if (chars[i]!=query[i])
+				if (myRange.file->get(i)!=query[i-myRange.start])
 				{
 					return;
 				}
 			}
 			
-			node->get(query.substr(chars.size(), string::npos), out);
+			node->get(query.substr(myRange.getLength(), string::npos), out);
 		}
 	}
 	
 private:
 	
-	vector<char> chars;
+	//vector<char> chars;
+	RangeInFile myRange;
 	unique_ptr<TrieNode> node;
 };
 
-unique_ptr<TrieNode> TrieNode::makeMultiChar(vector<char> charsIn, unique_ptr<TrieNode> nodeIn)
+unique_ptr<TrieNode> TrieNode::makeMultiChar(RangeInFile range, unique_ptr<TrieNode> nodeIn)
 {
-	return unique_ptr<TrieNode>(new TrieNodeMultiChar(charsIn, move(nodeIn)));
+	return unique_ptr<TrieNode>(new TrieNodeMultiChar(range, move(nodeIn)));
 }
 
 

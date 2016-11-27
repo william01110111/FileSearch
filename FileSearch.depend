@@ -63,10 +63,10 @@
 	<string>
 	<vector>
 
-1480216676 source:/home/william/c++/FileSearch/src/RangeInFile.cpp
+1480227515 source:/home/william/c++/FileSearch/src/RangeInFile.cpp
 	"../h/RangeInFile.h"
 
-1480216609 /home/william/c++/FileSearch/h/RangeInFile.h
+1480227486 /home/william/c++/FileSearch/h/RangeInFile.h
 	"FileData.h"
 
 1480215821 /home/william/c++/FileSearch/h/FileData.h
@@ -79,16 +79,16 @@
 	"../h/stringHelpers.h"
 	<unordered_map>
 
-1480224811 /home/william/c++/FileSearch/h/TrieNode.h
+1480226908 /home/william/c++/FileSearch/h/TrieNode.h
 	"../h/RangeInFile.h"
 	<string>
 	<vector>
 	<memory>
 
-1480226233 source:/home/william/c++/FileSearch/src/TrieNodeLeaf.cpp
+1480228213 source:/home/william/c++/FileSearch/src/TrieNodeLeaf.cpp
 	"../h/TrieNode.h"
 
-1480226282 source:/home/william/c++/FileSearch/src/main.cpp
+1480228316 source:/home/william/c++/FileSearch/src/main.cpp
 	<iostream>
 	"../h/Index.h"
 	"../h/stringHelpers.h"
@@ -125,7 +125,7 @@
 1480225477 source:/home/william/c++/FileSearch/src/TrieNodeMultiLeaf.cpp
 	"../h/TrieNode.h"
 
-1480226384 source:/home/william/c++/FileSearch/src/TrieNodeMultiChar.cpp
+1480228158 source:/home/william/c++/FileSearch/src/TrieNodeMultiChar.cpp
 	"../h/TrieNode.h"
 	"../h/stringHelpers.h"
 	<unordered_map>

@@ -8,20 +8,20 @@ using std::endl;
 int main(int argc, char** argv)
 {
 	//index.addTextFilesInDirectory("/home/william/mscl/linux-4.8.10/");
-	index.addTextFilesInDirectory(".");
-	//index.addTextFilesInDirectory("testSearchFile.txt");
+	//index.addTextFilesInDirectory(".");
+	index.addTextFilesInDirectory("testSearchFile.txt");
 	
 	cout << "index: " << endl << index.getString() << endl;
 	
 	//index.addFile("src/main.cpp");
 	//index.addFile("testSearchFile.txt");
 	
-	/*cout << "searching.." << endl;
+	cout << "searching.." << endl;
 	
 	vector<RangeInFile> results;
 	
 	//index.searchFor("part->elements[i] != FLEX_ARRAY_FREE", results);
-	index.searchFor("include", results);
+	index.searchFor("iamx", results);
 	
 	cout << "results:" << endl;
 	
@@ -29,11 +29,12 @@ int main(int argc, char** argv)
 	{
 		string labelString;
 		
-		labelString+=i.getFile()->getFilepath();
+		labelString+=i.file->getFilepath();
 		labelString+=" line ";
-		labelString+=std::to_string(i.getLineNumber());
+		labelString+=std::to_string(i.lineNumber);
 		
 		cout << putStringInBox(i.getLineString(), false, labelString) << endl;
+		//cout << putStringInBox(i.getString(), false, labelString) << endl;
 	}
-	*/
+	
 }
