@@ -8,6 +8,13 @@ class TrieNodeHashmap: public TrieNode
 {
 public:
 	
+	TrieNodeHashmap()=default;
+	
+	TrieNodeHashmap(char c, unique_ptr<TrieNode> node)
+	{
+		nodes[c]=move(node);
+	}
+	
 	virtual unique_ptr<TrieNode> add(RangeInFile& range)
 	{
 		char c=range.getCharAfterEnd();
@@ -18,14 +25,13 @@ public:
 		
 		if (i==nodes.end())
 		{
-			auto node=makeLeaf(range);
-			nodes[c].swap(node);
+			nodes[c]=makeLeaf(range);
 		}
 		else
 		{
 			if (auto newNode=nodes[c]->add(range))
 			{
-				nodes[c].swap(newNode);
+				nodes[c]=move(newNode);
 			}
 		}
 		
@@ -60,5 +66,10 @@ private:
 unique_ptr<TrieNode> TrieNode::makeHashmap()
 {
 	return unique_ptr<TrieNode>(new TrieNodeHashmap());
+}
+
+unique_ptr<TrieNode> TrieNode::makeHashmap(char c, unique_ptr<TrieNode> node)
+{
+	return unique_ptr<TrieNode>(new TrieNodeHashmap(c, move(node)));
 }
 

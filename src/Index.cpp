@@ -38,28 +38,12 @@ void Index::addFile(string filePath)
 		
 		if (newRoot)
 		{
-			root.swap(newRoot);
+			root=move(newRoot);
 		}
 	}
 }
 
-void Index::addAllFilesWithPostfix(vector<string>& filepaths, vector<string>& postfix)
-{
-	for (int i=0; i<int(filepaths.size()); i++)
-	{
-		for (auto j=postfix.begin(); j!=postfix.end(); j++)
-		{
-			if (substringMatches(filepaths[i], filepaths[i].size()-j->size(), *j))
-			{
-				cout << i << "/" << filepaths.size() << " (" << (i*10000/filepaths.size())/100.0 << "%) - indexing " << filepaths[i] << "..." << endl;
-				
-				addFile(filepaths[i]);
-			}
-		}
-	}
-}
-
-void Index::addCFilesInDirectory(string directory)
+void Index::addTextFilesInDirectory(string directory)
 {
 	vector<string> filepaths;
 	
@@ -67,7 +51,9 @@ void Index::addCFilesInDirectory(string directory)
 	
 	getAllFilesInFolder(directory, filepaths);
 	
-	vector<string> extensions={".cpp", ".h", ".c"};
+	vector<string> extensions;
+	string textFiles=".txt .c .cpp .h .hpp .py .swift .css .html .htm .html5 .java .xml .plist";
+	sliceStringBy(textFiles, " ", extensions);
 	
 	filepaths.erase(
 		std::remove_if(
@@ -87,11 +73,11 @@ void Index::addCFilesInDirectory(string directory)
 		filepaths.end()
 	);
 	
-	cout << "adding files to index..." << endl;
+	cout << "indexing files..." << endl;
 	
 	for (int i=0; i<int(filepaths.size()); i++)
 	{
-		cout << i << "/" << filepaths.size() << " (" << (i*10000/filepaths.size())/100.0 << "%) - indexing " << filepaths[i] << "..." << endl;
+		cout << i << "/" << filepaths.size() << " (" << (i*10000/filepaths.size())/100.0 << "%) " << filepaths[i] << "..." << endl;
 		
 		addFile(filepaths[i]);
 	}

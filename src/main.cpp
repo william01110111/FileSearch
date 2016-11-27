@@ -7,8 +7,8 @@ using std::endl;
 
 int main(int argc, char** argv)
 {
-	//index.addCFilesInDirectory("/home/william/mscl/linux-4.8.10/");
-	index.addCFilesInDirectory(".");
+	//index.addTextFilesInDirectory("/home/william/mscl/linux-4.8.10/");
+	index.addTextFilesInDirectory(".");
 	
 	
 	

@@ -11,7 +11,7 @@ public:
 	TrieNodeMultiChar(vector<char> charsIn, unique_ptr<TrieNode> nodeIn)
 	{
 		chars=charsIn;
-		node.swap(nodeIn);
+		node=move(nodeIn);
 	}
 	
 	virtual unique_ptr<TrieNode> add(RangeInFile& range)
@@ -26,27 +26,27 @@ public:
 				
 				if (i>=int(chars.size())-1)
 				{
-					lastNode.swap(node);
+					lastNode=move(node);
 				}
 				else
 				{
-					vector<chars> lastNodeChars(chars.begin()+i+1, chars.end());
-					lastNode=makeMultiChar(lastNodeChars, node);
+					vector<char> lastNodeChars(chars.begin()+i+1, chars.end());
+					lastNode=makeMultiChar(lastNodeChars, move(node));
 				}
 				
-				auto hashMapNode=makeHashmap(chars[i], lastNode);
-				hashMapNode.add(range);
+				auto hashMapNode=makeHashmap(chars[i], move(lastNode));
+				hashMapNode->add(range);
 				
 				unique_ptr<TrieNode> nextNode;
 				
 				if (i==0)
 				{
-					nextNode=hashMapNode;
+					nextNode=move(hashMapNode);
 				}
 				else
 				{
-					vector<chars> nextNodeChars(chars.begin(), chars.begin()+i);
-					nextNode=makeMultiChar(nextNodeChars, hashMapNode);
+					vector<char> nextNodeChars(chars.begin(), chars.begin()+i);
+					nextNode=makeMultiChar(nextNodeChars, move(hashMapNode));
 				}
 				
 				return nextNode;
@@ -56,9 +56,9 @@ public:
 			i++;
 		}
 		
-		if (auto newNode=node.add(range))
+		if (auto newNode=node->add(range))
 		{
-			node.swap(newNode);
+			node=move(newNode);
 		}
 		
 		return nullptr;
@@ -68,11 +68,11 @@ public:
 	{
 		if (chars.size()>query.size())
 		{
-			node.add("", out);
+			node->get("", out);
 		}
 		else
 		{
-			for (int i=0; i<chars.size(); i++)
+			for (int i=0; i<int(chars.size()); i++)
 			{
 				if (chars[i]!=query[i])
 				{
@@ -80,7 +80,7 @@ public:
 				}
 			}
 			
-			node.add(query.substr(chars.size(), string::npos));
+			node->get(query.substr(chars.size(), string::npos), out);
 		}
 	}
 	
@@ -92,7 +92,7 @@ private:
 
 unique_ptr<TrieNode> TrieNode::makeMultiChar(vector<char> charsIn, unique_ptr<TrieNode> nodeIn)
 {
-	return unique_ptr<TrieNode>(new TrieNodeMultiChar(charsIn, nodeIn));
+	return unique_ptr<TrieNode>(new TrieNodeMultiChar(charsIn, move(nodeIn)));
 }
 
 
