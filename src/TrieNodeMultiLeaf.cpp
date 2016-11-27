@@ -1,7 +1,7 @@
 
 #include "../h/TrieNode.h"
 
-class TrieNodeArray: public TrieNode
+class TrieNodeMultiLeaf: public TrieNode
 {
 public:
 	
@@ -25,8 +25,8 @@ private:
 };
 
 
-unique_ptr<TrieNode> TrieNode::makeArray()
+unique_ptr<TrieNode> TrieNode::makeMultiLeaf()
 {
-	return unique_ptr<TrieNode>(new TrieNodeArray());
+	return unique_ptr<TrieNode>(new TrieNodeMultiLeaf());
 }
 

@@ -17,7 +17,8 @@ public:
 	
 	static unique_ptr<TrieNode> makeHashmap();
 	static unique_ptr<TrieNode> makeLeaf(RangeInFile& range);
-	static unique_ptr<TrieNode> makeArray();
+	static unique_ptr<TrieNode> makeMultiLeaf();
+	static unique_ptr<TrieNode> makeMultiChar(vector<char> charsIn, unique_ptr<TrieNode> nodeIn);
 	
 	virtual unique_ptr<TrieNode> add(RangeInFile& range)=0;
 	

@@ -12,7 +12,7 @@ public:
 		
 		if (myRange.getCharAfterEnd()==0 && range.getCharAfterEnd()==0)
 		{
-			newNode=makeArray();
+			newNode=makeMultiLeaf();
 		}
 		else
 		{
