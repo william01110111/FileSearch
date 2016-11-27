@@ -1,5 +1,9 @@
 #include "../h/Index.h"
 
+#include <iostream>
+using std::cout;
+using std::endl;
+
 #include "../h/TrieNode.h"
 #include "../h/fileIO.h"
 #include "../h/stringHelpers.h"
@@ -37,15 +41,17 @@ void Index::addFile(string filePath)
 	}
 }
 
-void Index::addAllFilesWithPostfix(vector<string> filepaths, vector<string> postfix)
+void Index::addAllFilesWithPostfix(vector<string>& filepaths, vector<string>& postfix)
 {
-	for (auto i: filepaths)
+	for (int i=0; i<int(filepaths.size()); i++)
 	{
 		for (auto j=postfix.begin(); j!=postfix.end(); j++)
 		{
-			if (substringMatches(i, i.size()-j->size(), *j))
+			if (substringMatches(filepaths[i], filepaths[i].size()-j->size(), *j))
 			{
-				addFile(i);
+				cout << i << "/" << filepaths.size() << " (" << i*100/filepaths.size() << "%) - indexing " << filepaths[i] << "..." << endl;
+				
+				addFile(filepaths[i]);
 			}
 		}
 	}
@@ -54,6 +60,11 @@ void Index::addAllFilesWithPostfix(vector<string> filepaths, vector<string> post
 void Index::searchFor(string query, vector<RangeInFile>& out)
 {
 	root->get(query, out);
+	
+	for (int i=0; i<int(out.size()); i++)
+	{
+		out[i]=out[i].copyWithSize(query.size());
+	}
 }
 
 

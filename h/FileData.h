@@ -24,7 +24,7 @@ public:
 		{
 			fileData=unique_ptr<string>(new string);
 			
-			loadEntireFile(filepath, true, *fileData);
+			loadEntireFile(filepath, false, *fileData);
 		}
 		
 		return *fileData;

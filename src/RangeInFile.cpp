@@ -16,8 +16,13 @@ string RangeInFile::getLineString()
 	
 	int e=endIndex;
 	
-	while (e<int(file->str().size()) && file->get(e)!='\n')
+	while (e<int(file->str().size()) && file->get(e)!='\n' && file->get(e)!=10)
 		e++;
 	
 	return file->str().substr(s, e-s);
+}
+
+RangeInFile RangeInFile::copyWithSize(int newSize)
+{
+	return RangeInFile(file, startIndex, startIndex+newSize, lineNumber);
 }

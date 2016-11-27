@@ -49,8 +49,19 @@ bool getAllFilesInFolder(string folder, vector<string>& filepathsOut)
 	struct dirent *dirp;
 	struct stat filestat;
 	
+	std::fstream file;
+	
+	file.open(folder);
+	
+	if (file.is_open())
+	{
+		filepathsOut.push_back(folder);
+		file.close();
+		return true;
+	}
+	
 	if(!(dp  = opendir(folder.c_str()))) {
-		cout << "Error opening applications directory" << endl;
+		cout << "Error opening directory" << endl;
 		return false;
 	}
 	

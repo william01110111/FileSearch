@@ -21,6 +21,7 @@ public:
 	inline void incrementEnd() {endIndex++;}
 	string getString();
 	string getLineString();
+	RangeInFile copyWithSize(int newSize); // makes a copy of this objet with the same start but of the specified size
 	
 private:
 	FileData* file; // the file

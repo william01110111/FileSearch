@@ -15,7 +15,9 @@ int main(int argc, char** argv)
 	
 	cout << "adding files to index..." << endl;
 	
-	index.addAllFilesWithPostfix(filepaths, {".cpp", ".h"});
+	vector<string> extensions={".cpp", ".h", ".c"};
+	
+	index.addAllFilesWithPostfix(filepaths, extensions);
 	
 	//index.addFile("src/main.cpp");
 	//index.addFile("testSearchFile.txt");
