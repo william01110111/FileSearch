@@ -1,6 +1,8 @@
 
 #include "../h/TrieNode.h"
 
+#include "../h/stringHelpers.h"
+
 #include <unordered_map>
 using std::unordered_map;
 
@@ -72,6 +74,8 @@ public:
 		{
 			out+=i;
 		}
+		
+		out+=" "+indentString(node->getString(), false, "   ");
 		
 		return out;
 	}

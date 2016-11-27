@@ -8,6 +8,15 @@ public:
 	
 	unique_ptr<TrieNode> add(RangeInFile& range)
 	{
+		vector<char> matchingChars;
+		
+		while(myRange.getCharAfterEnd()==range.getCharAfterEnd() && myRange.getCharAfterEnd()!=0)
+		{
+			matchingChars.push_back(myRange.getCharAfterEnd());
+			myRange.incrementEnd();
+			range.incrementEnd();
+		}
+		
 		unique_ptr<TrieNode> newNode;
 		
 		if (myRange.getCharAfterEnd()==0 && range.getCharAfterEnd()==0)
@@ -24,7 +33,14 @@ public:
 		newNode->add(myRange);
 		newNode->add(range);
 		
-		return newNode;
+		if (matchingChars.size()==0)
+		{
+			return newNode;
+		}
+		else
+		{
+			return makeMultiChar(matchingChars, move(newNode));
+		}
 	}
 	
 	virtual string getString()

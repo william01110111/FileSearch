@@ -74,7 +74,7 @@
 	<memory>
 	"fileIO.h"
 
-1480225329 source:/home/william/c++/FileSearch/src/TrieNodeHashmap.cpp
+1480225746 source:/home/william/c++/FileSearch/src/TrieNodeHashmap.cpp
 	"../h/TrieNode.h"
 	"../h/stringHelpers.h"
 	<unordered_map>
@@ -85,10 +85,10 @@
 	<vector>
 	<memory>
 
-1480225019 source:/home/william/c++/FileSearch/src/TrieNodeLeaf.cpp
+1480226233 source:/home/william/c++/FileSearch/src/TrieNodeLeaf.cpp
 	"../h/TrieNode.h"
 
-1480225694 source:/home/william/c++/FileSearch/src/main.cpp
+1480226282 source:/home/william/c++/FileSearch/src/main.cpp
 	<iostream>
 	"../h/Index.h"
 	"../h/stringHelpers.h"
@@ -125,7 +125,8 @@
 1480225477 source:/home/william/c++/FileSearch/src/TrieNodeMultiLeaf.cpp
 	"../h/TrieNode.h"
 
-1480225680 source:/home/william/c++/FileSearch/src/TrieNodeMultiChar.cpp
+1480226384 source:/home/william/c++/FileSearch/src/TrieNodeMultiChar.cpp
 	"../h/TrieNode.h"
+	"../h/stringHelpers.h"
 	<unordered_map>
 
