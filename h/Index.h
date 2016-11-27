@@ -21,6 +21,7 @@ public:
 	
 	void addFile(string filePath);
 	void addAllFilesWithPostfix(vector<string>& filepaths, vector<string>& postfix);
+	void addCFilesInDirectory(string directory);
 	
 	void searchFor(string query, vector<RangeInFile>& out);
 	

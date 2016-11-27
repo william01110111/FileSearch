@@ -4,6 +4,8 @@
 using std::cout;
 using std::endl;
 
+#include <algorithm>
+
 #include "../h/TrieNode.h"
 #include "../h/fileIO.h"
 #include "../h/stringHelpers.h"
@@ -49,12 +51,52 @@ void Index::addAllFilesWithPostfix(vector<string>& filepaths, vector<string>& po
 		{
 			if (substringMatches(filepaths[i], filepaths[i].size()-j->size(), *j))
 			{
-				cout << i << "/" << filepaths.size() << " (" << i*100/filepaths.size() << "%) - indexing " << filepaths[i] << "..." << endl;
+				cout << i << "/" << filepaths.size() << " (" << (i*10000/filepaths.size())/100.0 << "%) - indexing " << filepaths[i] << "..." << endl;
 				
 				addFile(filepaths[i]);
 			}
 		}
 	}
+}
+
+void Index::addCFilesInDirectory(string directory)
+{
+	vector<string> filepaths;
+	
+	cout << "finding files in " << directory << "..." << endl;
+	
+	getAllFilesInFolder(directory, filepaths);
+	
+	vector<string> extensions={".cpp", ".h", ".c"};
+	
+	filepaths.erase(
+		std::remove_if(
+			filepaths.begin(),
+			filepaths.end(),
+			[&]( const string& i ) // lambda
+			{
+				for (auto j=extensions.begin(); j!=extensions.end(); j++)
+				{
+					if (substringMatches(i, i.size()-j->size(), *j))
+						return false;
+				}
+				
+				return true;
+			}
+		),
+		filepaths.end()
+	);
+	
+	cout << "adding files to index..." << endl;
+	
+	for (int i=0; i<int(filepaths.size()); i++)
+	{
+		cout << i << "/" << filepaths.size() << " (" << (i*10000/filepaths.size())/100.0 << "%) - indexing " << filepaths[i] << "..." << endl;
+		
+		addFile(filepaths[i]);
+	}
+	
+	cout << "done indexing" << endl;
 }
 
 void Index::searchFor(string query, vector<RangeInFile>& out)

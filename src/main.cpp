@@ -7,25 +7,19 @@ using std::endl;
 
 int main(int argc, char** argv)
 {
-	vector<string> filepaths;
+	//index.addCFilesInDirectory("/home/william/mscl/linux-4.8.10/");
+	index.addCFilesInDirectory(".");
 	
-	getAllFilesInFolder(".", filepaths);
 	
-	cout << "filepaths:" << endl;
-	
-	cout << "adding files to index..." << endl;
-	
-	vector<string> extensions={".cpp", ".h", ".c"};
-	
-	index.addAllFilesWithPostfix(filepaths, extensions);
 	
 	//index.addFile("src/main.cpp");
 	//index.addFile("testSearchFile.txt");
 	
-	cout << "searching for file.." << endl;
+	cout << "searching.." << endl;
 	
 	vector<RangeInFile> results;
 	
+	//index.searchFor("part->elements[i] != FLEX_ARRAY_FREE", results);
 	index.searchFor("include", results);
 	
 	cout << "results:" << endl;
