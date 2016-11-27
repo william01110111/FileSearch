@@ -9,14 +9,14 @@ int main(int argc, char** argv)
 {
 	cout << "adding file to index..." << endl;
 	
-	//index.addFile("src/main.cpp");
+	index.addFile("src/main.cpp");
 	index.addFile("testSearchFile.txt");
 	
 	cout << "searching for file.." << endl;
 	
 	vector<RangeInFile> results;
 	
-	index.searchFor("b", results);
+	index.searchFor("include", results);
 	
 	cout << "results:" << endl;
 	
@@ -28,6 +28,6 @@ int main(int argc, char** argv)
 		labelString+=" line ";
 		labelString+=std::to_string(i.getLineNumber());
 		
-		cout << putStringInBox(i.getString(), false, labelString) << endl;
+		cout << putStringInBox(i.getLineString(), false, labelString) << endl;
 	}
 }

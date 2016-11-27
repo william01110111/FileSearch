@@ -18,7 +18,8 @@ public:
 		
 		if (i==nodes.end())
 		{
-			nodes[c]=makeLeaf(range);
+			auto node=makeLeaf(range);
+			nodes[c].swap(node);
 		}
 		else
 		{

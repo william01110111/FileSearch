@@ -8,7 +8,16 @@ public:
 	
 	unique_ptr<TrieNode> add(RangeInFile& range)
 	{
-		auto newNode=makeHashmap();
+		unique_ptr<TrieNode> newNode;
+		
+		if (myRange.getCharAfterEnd()==0 && range.getCharAfterEnd()==0)
+		{
+			newNode=makeArray();
+		}
+		else
+		{
+			newNode=makeHashmap();
+		}
 		
 		//	do not increment ranges as the new node will replace this one, not go below it
 		
