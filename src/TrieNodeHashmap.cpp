@@ -1,5 +1,5 @@
 
-#include "TrieNode.h"
+#include "../h/TrieNode.h"
 
 #include <unordered_map>
 using std::unordered_map;

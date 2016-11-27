@@ -1,4 +1,4 @@
-#include "PositionInFile.h"
+#include "../h/RangeInFile.h"
 
 string RangeInFile::getString()
 {

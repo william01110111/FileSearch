@@ -2,13 +2,13 @@
 using std::cout;
 using std::endl;
 
-#include "Index.h"
+#include "../h/Index.h"
 
 int main(int argc, char** argv)
 {
 	cout << "adding file to index..." << endl;
 	
-	index.addFile("main.cpp");
+	index.addFile("src/main.cpp");
 	
 	cout << "searching for file.." << endl;
 	

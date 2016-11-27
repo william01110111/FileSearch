@@ -10,7 +10,7 @@ using std::string;
 using std::unique_ptr;
 
 #include "TrieNode.h"
-#include "PositionInFile.h"
+#include "../h/RangeInFile.h"
 #include "FileData.h"
 
 class Index

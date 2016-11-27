@@ -1,4 +1,4 @@
-#include "TrieNode.h"
+#include "../h/TrieNode.h"
 
 class TrieNodeLeaf: public TrieNode
 {

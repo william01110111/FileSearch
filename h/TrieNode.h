@@ -1,6 +1,6 @@
 #pragma once
 
-#include "PositionInFile.h"
+#include "../h/RangeInFile.h"
 
 #include <string>
 using std::string;

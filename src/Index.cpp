@@ -1,7 +1,7 @@
-#include "Index.h"
+#include "../h/Index.h"
 
-#include "TrieNode.h"
-#include "fileIO.h"
+#include "../h/TrieNode.h"
+#include "../h/fileIO.h"
 
 Index index;
 

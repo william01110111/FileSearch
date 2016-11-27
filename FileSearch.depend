@@ -51,3 +51,63 @@
 1480210216 source:/home/william/c++/FileSearch/RangeInFile.cpp
 	"PositionInFile.h"
 
+1480211214 source:/home/william/c++/FileSearch/src/fileIO.cpp
+	"../h/fileIO.h"
+	<fstream>
+	<sstream>
+	<iostream>
+
+1480202980 /home/william/c++/FileSearch/h/fileIO.h
+	<string>
+
+1480211221 source:/home/william/c++/FileSearch/src/RangeInFile.cpp
+	"../h/RangeInFile.h"
+
+1480210494 /home/william/c++/FileSearch/h/RangeInFile.h
+	"FileData.h"
+
+1480204928 /home/william/c++/FileSearch/h/FileData.h
+	<string>
+	<memory>
+	"fileIO.h"
+
+1480211362 source:/home/william/c++/FileSearch/src/TrieNodeHashmap.cpp
+	"../h/TrieNode.h"
+	<unordered_map>
+
+1480211367 /home/william/c++/FileSearch/h/TrieNode.h
+	"../h/RangeInFile.h"
+	<string>
+	<vector>
+	<memory>
+
+1480211372 source:/home/william/c++/FileSearch/src/TrieNodeLeaf.cpp
+	"../h/TrieNode.h"
+
+1480211370 source:/home/william/c++/FileSearch/src/main.cpp
+	<iostream>
+	"../h/Index.h"
+
+1480211381 /home/william/c++/FileSearch/h/Index.h
+	<vector>
+	<string>
+	<memory>
+	"TrieNode.h"
+	"../h/RangeInFile.h"
+	"FileData.h"
+
+1480211388 source:/home/william/c++/FileSearch/src/Index.cpp
+	"../h/Index.h"
+	"../h/TrieNode.h"
+	"../h/fileIO.h"
+
+1480211421 source:/home/william/c++/FileSearch/src/stringHelpers.cpp
+	"../h/stringHelpers.h"
+	<fstream>
+	<sstream>
+	<math.h>
+
+1480211344 /home/william/c++/FileSearch/h/stringHelpers.h
+	<string>
+	<vector>
+
