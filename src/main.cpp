@@ -5,6 +5,9 @@ using std::endl;
 #include "../h/Index.h"
 #include "../h/stringHelpers.h"
 
+int leafNum=0;
+int arrayNum=0;
+
 int main(int argc, char** argv)
 {
 	index.addTextFilesInDirectory("/home/william/mscl/linux-4.8.10/");

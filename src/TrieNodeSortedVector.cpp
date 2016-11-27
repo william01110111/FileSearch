@@ -11,13 +11,15 @@ class TrieNodeSortedVector: public TrieNode
 {
 public:
 	
+	//TrieNodeSortedVector()=default;
+	TrieNodeSortedVector() {arrayNum++;}
+	~TrieNodeSortedVector() {arrayNum--;}
+	
 	struct KeyVal
 	{
 		char key;
 		unique_ptr<TrieNode> val;
 	};
-	
-	TrieNodeSortedVector()=default;
 	
 	TrieNodeSortedVector(char c, unique_ptr<TrieNode> node)
 	{

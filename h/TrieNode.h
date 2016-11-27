@@ -11,6 +11,9 @@ using std::vector;
 #include <memory>
 using std::unique_ptr;
 
+extern int leafNum;
+extern int arrayNum;
+
 class TrieNode
 {
 public:

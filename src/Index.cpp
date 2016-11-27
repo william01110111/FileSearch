@@ -80,6 +80,8 @@ void Index::addTextFilesInDirectory(string directory)
 		cout << i << "/" << filepaths.size() << " (" << (i*10000/filepaths.size())/100.0 << "%) " << filepaths[i] << "..." << endl;
 		
 		addFile(filepaths[i]);
+		
+		cout << arrayNum << " arrays and " << leafNum << " leaves" << endl;
 	}
 	
 	cout << "done indexing" << endl;
