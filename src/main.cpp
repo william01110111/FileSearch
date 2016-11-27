@@ -7,8 +7,8 @@ using std::endl;
 
 int main(int argc, char** argv)
 {
-	//index.addTextFilesInDirectory("/home/william/mscl/linux-4.8.10/");
-	index.addTextFilesInDirectory(".");
+	index.addTextFilesInDirectory("/home/william/mscl/linux-4.8.10/");
+	//index.addTextFilesInDirectory(".");
 	//index.addTextFilesInDirectory("testSearchFile.txt");
 	
 	//cout << "index: " << endl << index.getString() << endl;
@@ -30,8 +30,8 @@ int main(int argc, char** argv)
 		string labelString;
 		
 		labelString+=i.file->getFilepath();
-		labelString+=" line ";
-		labelString+=std::to_string(i.lineNumber);
+		//labelString+=" line ";
+		//labelString+=std::to_string(i.lineNumber);
 		
 		cout << putStringInBox(i.getLineString(), false, labelString) << endl;
 		//cout << putStringInBox(i.getString(), false, labelString) << endl;

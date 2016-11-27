@@ -24,5 +24,5 @@ string RangeInFile::getLineString()
 
 RangeInFile RangeInFile::copyWithSize(int newSize)
 {
-	return RangeInFile(file, start, start+newSize, lineNumber);
+	return RangeInFile(file, start, start+newSize);//, lineNumber);
 }

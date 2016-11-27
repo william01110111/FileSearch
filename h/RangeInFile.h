@@ -5,12 +5,12 @@
 class RangeInFile
 {
 public:
-	RangeInFile(FileData* fileIn, int startIn, int endIn, int lineNumberIn)
+	RangeInFile(FileData* fileIn, int startIn, int endIn)//, int lineNumberIn)
 	{
 		file=fileIn;
 		start=startIn;
 		end=endIn;
-		lineNumber=lineNumberIn;
+		//lineNumber=lineNumberIn;
 	}
 	
 	//inline FileData* getFile() {return file;}
@@ -28,5 +28,5 @@ public:
 	FileData* file; // the file
 	int start; // the position of the first character in the range (inclusive)
 	int end; // the position of the last character in the range (exclusive)
-	int lineNumber;
+	//int lineNumber;
 };

@@ -33,7 +33,7 @@ public:
 				else
 				{
 					//vector<char> lastNodeChars(chars.begin()+i+1, chars.end());
-					lastNode=makeMultiChar(RangeInFile(myRange.file, i+1, myRange.end, myRange.lineNumber), move(node));
+					lastNode=makeMultiChar(RangeInFile(myRange.file, i+1, myRange.end), move(node));
 				}
 				
 				auto hashMapNode=makeDefaultBranch(myRange.file->get(i), move(lastNode));
@@ -48,7 +48,7 @@ public:
 				else
 				{
 					//vector<char> nextNodeChars(chars.begin(), chars.begin()+i);
-					nextNode=makeMultiChar(RangeInFile(myRange.file, myRange.start, i, myRange.lineNumber), move(hashMapNode));
+					nextNode=makeMultiChar(RangeInFile(myRange.file, myRange.start, i), move(hashMapNode));
 				}
 				
 				return nextNode;

@@ -40,7 +40,7 @@ public:
 		}
 		else
 		{
-			return makeMultiChar(RangeInFile(rangeCopy.file, start, rangeCopy.end, rangeCopy.lineNumber), move(newNode));
+			return makeMultiChar(RangeInFile(rangeCopy.file, start, rangeCopy.end), move(newNode));
 		}
 	}
 	
