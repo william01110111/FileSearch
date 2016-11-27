@@ -39,6 +39,7 @@
 		<Unit filename="h/stringHelpers.h" />
 		<Unit filename="src/Index.cpp" />
 		<Unit filename="src/RangeInFile.cpp" />
+		<Unit filename="src/TrieNodeArray.cpp" />
 		<Unit filename="src/TrieNodeHashmap.cpp" />
 		<Unit filename="src/TrieNodeLeaf.cpp" />
 		<Unit filename="src/fileIO.cpp" />

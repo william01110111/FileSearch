@@ -10,32 +10,30 @@
 			<Collapse line="16" />
 		</Folding>
 	</File>
-	<File name="src/main.cpp" open="1" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src/main.cpp" open="1" top="1" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="412" topLine="0" />
+			<Cursor1 position="201" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="src/fileIO.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src/fileIO.cpp" open="1" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="15" topLine="0" />
+			<Cursor1 position="1424" topLine="39" />
 		</Cursor>
-		<Folding>
-			<Collapse line="11" />
-		</Folding>
+	</File>
+	<File name="h/fileIO.h" open="1" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="335" topLine="0" />
+		</Cursor>
 	</File>
 	<File name="h/stringHelpers.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="3655" topLine="32" />
 		</Cursor>
 	</File>
-	<File name="src/TrieNodeLeaf.cpp" open="1" top="1" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src/TrieNodeLeaf.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="15" topLine="0" />
+			<Cursor1 position="472" topLine="0" />
 		</Cursor>
-		<Folding>
-			<Collapse line="3" />
-			<Collapse line="32" />
-		</Folding>
 	</File>
 	<File name="src/RangeInFile.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
@@ -46,16 +44,12 @@
 			<Collapse line="8" />
 		</Folding>
 	</File>
-	<File name="src/Index.cpp" open="1" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src/Index.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="474" topLine="0" />
+			<Cursor1 position="272" topLine="0" />
 		</Cursor>
-		<Folding>
-			<Collapse line="8" />
-			<Collapse line="39" />
-		</Folding>
 	</File>
-	<File name="src/stringHelpers.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src/stringHelpers.cpp" open="1" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="147" topLine="0" />
 		</Cursor>
@@ -69,31 +63,29 @@
 			<Collapse line="233" />
 		</Folding>
 	</File>
-	<File name="testSearchFile.txt" open="1" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="testSearchFile.txt" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="3" topLine="0" />
+			<Cursor1 position="1" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="h/TrieNode.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="29" topLine="0" />
+			<Cursor1 position="334" topLine="0" />
 		</Cursor>
-		<Folding>
-			<Collapse line="14" />
-		</Folding>
 	</File>
-	<File name="src/TrieNodeHashmap.cpp" open="1" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src/TrieNodeHashmap.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="16" topLine="0" />
+			<Cursor1 position="482" topLine="3" />
 		</Cursor>
-		<Folding>
-			<Collapse line="7" />
-			<Collapse line="59" />
-		</Folding>
 	</File>
 	<File name="h/RangeInFile.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="222" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src/TrieNodeArray.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="254" topLine="0" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>

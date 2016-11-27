@@ -51,14 +51,17 @@
 1480210216 source:/home/william/c++/FileSearch/RangeInFile.cpp
 	"PositionInFile.h"
 
-1480211214 source:/home/william/c++/FileSearch/src/fileIO.cpp
+1480215174 source:/home/william/c++/FileSearch/src/fileIO.cpp
 	"../h/fileIO.h"
 	<fstream>
 	<sstream>
 	<iostream>
+	<dirent.h>
+	<sys/stat.h>
 
-1480202980 /home/william/c++/FileSearch/h/fileIO.h
+1480215133 /home/william/c++/FileSearch/h/fileIO.h
 	<string>
+	<vector>
 
 1480211221 source:/home/william/c++/FileSearch/src/RangeInFile.cpp
 	"../h/RangeInFile.h"
@@ -84,7 +87,7 @@
 1480213783 source:/home/william/c++/FileSearch/src/TrieNodeLeaf.cpp
 	"../h/TrieNode.h"
 
-1480213301 source:/home/william/c++/FileSearch/src/main.cpp
+1480215275 source:/home/william/c++/FileSearch/src/main.cpp
 	<iostream>
 	"../h/Index.h"
 	"../h/stringHelpers.h"

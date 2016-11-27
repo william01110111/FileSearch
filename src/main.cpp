@@ -7,10 +7,21 @@ using std::endl;
 
 int main(int argc, char** argv)
 {
-	cout << "adding file to index..." << endl;
+	vector<string> filepaths;
 	
-	index.addFile("src/main.cpp");
-	index.addFile("testSearchFile.txt");
+	getAllFilesInFolder(".", filepaths);
+	
+	cout << "filepaths:" << endl;
+	
+	cout << "adding files to index..." << endl;
+	
+	for (auto i: filepaths)
+	{
+		index.addFile(i);
+	}
+	
+	//index.addFile("src/main.cpp");
+	//index.addFile("testSearchFile.txt");
 	
 	cout << "searching for file.." << endl;
 	

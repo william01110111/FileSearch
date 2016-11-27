@@ -8,6 +8,9 @@
 using std::cout;
 using std::endl;
 
+#include <dirent.h> //used for getting file in folder lists
+#include <sys/stat.h> //used for telling if a file is really a folder
+
 bool loadEntireFile(string inName, bool printOutput, string& out)
 {
 	std::fstream inFile;
@@ -40,3 +43,45 @@ bool loadEntireFile(string inName, bool printOutput, string& out)
 	}
 }
 
+bool getAllFilesInFolder(string folder, vector<string>& filepathsOut)
+{
+	DIR *dp;
+	struct dirent *dirp;
+	struct stat filestat;
+	
+	if(!(dp  = opendir(folder.c_str()))) {
+		cout << "Error opening applications directory" << endl;
+		return false;
+	}
+	
+	while ((dirp = readdir(dp))) {
+		
+		string filename=dirp->d_name;
+		
+		//Skip current object if it is this directory or parent directory
+		if(filename.size()>0 && filename[0]!='.')
+		{
+			string path=folder+"/"+filename;
+			
+			//get stats on file/folder
+			if (stat(path.c_str(), &filestat))
+			{
+				cout << "error getting stats!" << endl;
+				return false;
+			}
+			
+			//Recursively call this function if current object is a directory
+			if(S_ISDIR(filestat.st_mode))
+			{
+				getAllFilesInFolder(path, filepathsOut);
+			}
+			else
+			{
+				filepathsOut.push_back(path);
+			}
+		}
+	}
+	
+	closedir(dp);
+	return true;
+}
