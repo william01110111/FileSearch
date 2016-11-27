@@ -43,6 +43,7 @@
 		<Unit filename="src/TrieNodeLeaf.cpp" />
 		<Unit filename="src/TrieNodeMultiChar.cpp" />
 		<Unit filename="src/TrieNodeMultiLeaf.cpp" />
+		<Unit filename="src/TrieNodeSortedVector.cpp" />
 		<Unit filename="src/fileIO.cpp" />
 		<Unit filename="src/main.cpp" />
 		<Unit filename="src/stringHelpers.cpp" />

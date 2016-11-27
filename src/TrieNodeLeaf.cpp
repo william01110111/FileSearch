@@ -42,7 +42,7 @@ public:
 		}
 	}
 	
-	virtual string getString()
+	string getString()
 	{
 		return "leaf";
 	}

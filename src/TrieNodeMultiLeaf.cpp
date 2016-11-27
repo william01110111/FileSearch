@@ -11,7 +11,7 @@ public:
 		return nullptr;
 	}
 	
-	virtual string getString()
+	string getString()
 	{
 		return std::to_string(myRanges.size())+" leaves";
 	}

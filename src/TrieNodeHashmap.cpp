@@ -17,7 +17,7 @@ public:
 		nodes[c]=move(node);
 	}
 	
-	virtual unique_ptr<TrieNode> add(RangeInFile& range)
+	unique_ptr<TrieNode> add(RangeInFile& range)
 	{
 		char c=range.getCharAfterEnd();
 		
@@ -40,7 +40,7 @@ public:
 		return nullptr;
 	}
 	
-	virtual string getString()
+	string getString()
 	{
 		string out="hashmap";
 		
@@ -58,7 +58,7 @@ public:
 		return out;
 	}
 	
-	virtual void get(string query, vector<RangeInFile>& out)
+	void get(string query, vector<RangeInFile>& out)
 	{
 		if (!query.empty())
 		{

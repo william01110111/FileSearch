@@ -16,7 +16,7 @@ public:
 		node=move(nodeIn);
 	}
 	
-	virtual unique_ptr<TrieNode> add(RangeInFile& range)
+	unique_ptr<TrieNode> add(RangeInFile& range)
 	{
 		for (int i=myRange.start; i<myRange.end;)
 		{
@@ -66,7 +66,7 @@ public:
 		return nullptr;
 	}
 	
-	virtual string getString()
+	string getString()
 	{
 		string out="multi-char\n   ";
 		
@@ -80,9 +80,9 @@ public:
 		return out;
 	}
 	
-	virtual void get(string query, vector<RangeInFile>& out)
+	void get(string query, vector<RangeInFile>& out)
 	{
-		if (myRange.getLength()>query.size())
+		if (myRange.getLength()>int(query.size()))
 		{
 			node->get("", out);
 		}
