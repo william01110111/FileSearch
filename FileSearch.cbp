@@ -31,6 +31,19 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="h/FileData.h" />
+		<Unit filename="h/Index.h" />
+		<Unit filename="h/RangeInFile.h" />
+		<Unit filename="h/TrieNode.h" />
+		<Unit filename="h/fileIO.h" />
+		<Unit filename="h/stringHelpers.h" />
+		<Unit filename="src/Index.cpp" />
+		<Unit filename="src/RangeInFile.cpp" />
+		<Unit filename="src/TrieNodeHashmap.cpp" />
+		<Unit filename="src/TrieNodeLeaf.cpp" />
+		<Unit filename="src/fileIO.cpp" />
+		<Unit filename="src/main.cpp" />
+		<Unit filename="src/stringHelpers.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />

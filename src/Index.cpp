@@ -18,9 +18,14 @@ void Index::addFile(string filePath)
 	
 	string str=file->str();
 	
+	int lineNumber=1;
+	
 	for (int i=0; i<int(str.size()); i++)
 	{
-		RangeInFile range{file, i, i+1};
+		if (file->get(i)=='\n')
+			lineNumber++;
+		
+		RangeInFile range{file, i, i+1, lineNumber};
 		
 		unique_ptr<TrieNode> newRoot=root->add(range);
 		

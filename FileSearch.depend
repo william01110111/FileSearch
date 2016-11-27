@@ -63,7 +63,7 @@
 1480211221 source:/home/william/c++/FileSearch/src/RangeInFile.cpp
 	"../h/RangeInFile.h"
 
-1480210494 /home/william/c++/FileSearch/h/RangeInFile.h
+1480211867 /home/william/c++/FileSearch/h/RangeInFile.h
 	"FileData.h"
 
 1480204928 /home/william/c++/FileSearch/h/FileData.h
@@ -84,9 +84,10 @@
 1480211372 source:/home/william/c++/FileSearch/src/TrieNodeLeaf.cpp
 	"../h/TrieNode.h"
 
-1480211370 source:/home/william/c++/FileSearch/src/main.cpp
+1480212285 source:/home/william/c++/FileSearch/src/main.cpp
 	<iostream>
 	"../h/Index.h"
+	"../h/stringHelpers.h"
 
 1480211381 /home/william/c++/FileSearch/h/Index.h
 	<vector>
@@ -96,7 +97,7 @@
 	"../h/RangeInFile.h"
 	"FileData.h"
 
-1480211388 source:/home/william/c++/FileSearch/src/Index.cpp
+1480211950 source:/home/william/c++/FileSearch/src/Index.cpp
 	"../h/Index.h"
 	"../h/TrieNode.h"
 	"../h/fileIO.h"
