@@ -15,10 +15,7 @@ int main(int argc, char** argv)
 	
 	cout << "adding files to index..." << endl;
 	
-	for (auto i: filepaths)
-	{
-		index.addFile(i);
-	}
+	index.addAllFilesWithPostfix(filepaths, {".cpp", ".h"});
 	
 	//index.addFile("src/main.cpp");
 	//index.addFile("testSearchFile.txt");

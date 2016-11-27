@@ -2,6 +2,7 @@
 
 #include "../h/TrieNode.h"
 #include "../h/fileIO.h"
+#include "../h/stringHelpers.h"
 
 Index index;
 
@@ -36,7 +37,23 @@ void Index::addFile(string filePath)
 	}
 }
 
+void Index::addAllFilesWithPostfix(vector<string> filepaths, vector<string> postfix)
+{
+	for (auto i: filepaths)
+	{
+		for (auto j=postfix.begin(); j!=postfix.end(); j++)
+		{
+			if (substringMatches(i, i.size()-j->size(), *j))
+			{
+				addFile(i);
+			}
+		}
+	}
+}
+
 void Index::searchFor(string query, vector<RangeInFile>& out)
 {
 	root->get(query, out);
 }
+
+
