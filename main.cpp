@@ -12,14 +12,16 @@ int main(int argc, char** argv)
 	
 	cout << "searching for file.." << endl;
 	
-	vector<PositionInFile> results;
+	vector<RangeInFile> results;
 	
-	index.searchFor("dex", results);
+	index.searchFor("#", results);
 	
 	cout << "results:" << endl;
 	
 	for (auto i: results)
 	{
-		cout << i.charPos << endl;
+		cout << "_____________________________________________________________" << endl << endl;
+		
+		cout << i.getLineString() << endl;
 	}
 }

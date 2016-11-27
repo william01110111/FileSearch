@@ -4,15 +4,15 @@
 #include <unordered_map>
 using std::unordered_map;
 
-class TrieNodeHashmap: TrieNode
+class TrieNodeHashmap: public TrieNode
 {
 public:
 	
 	virtual unique_ptr<TrieNode> add(RangeInFile& range)
 	{
-		char c=range.file->get(range.endIndex);
+		char c=range.getCharAfterEnd();
 		
-		range.endIndex++;
+		range.incrementEnd();
 		
 		auto i=nodes.find(c);
 		
@@ -44,9 +44,9 @@ public:
 		}
 		else
 		{
-			for (auto i: nodes)
+			for (auto i=nodes.begin(); i!=nodes.end(); i++)
 			{
-				i->get("", out);
+				(*i).second->get("", out);
 			}
 		}
 	}

@@ -36,6 +36,7 @@
 		<Unit filename="Index.cpp" />
 		<Unit filename="Index.h" />
 		<Unit filename="PositionInFile.h" />
+		<Unit filename="RangeInFile.cpp" />
 		<Unit filename="TrieNode.h" />
 		<Unit filename="TrieNodeHashmap.cpp" />
 		<Unit filename="TrieNodeLeaf.cpp" />

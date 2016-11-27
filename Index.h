@@ -29,4 +29,6 @@ private:
 	
 	vector<unique_ptr<FileData>> files;
 	
-} index;
+};
+
+extern Index index;

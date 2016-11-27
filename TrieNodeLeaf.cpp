@@ -4,10 +4,7 @@ class TrieNodeLeaf: public TrieNode
 {
 public:
 	
-	TrieNodeLeaf(RangeInFile& rangeIn)
-	{
-		myRange=rangeIn;
-	}
+	TrieNodeLeaf(RangeInFile& rangeIn): myRange(rangeIn) {}
 	
 	unique_ptr<TrieNode> add(RangeInFile& range)
 	{

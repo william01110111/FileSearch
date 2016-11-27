@@ -3,6 +3,8 @@
 #include "TrieNode.h"
 #include "fileIO.h"
 
+Index index;
+
 Index::Index()
 {
 	root=unique_ptr<TrieNode>(TrieNode::makeHashmap());
